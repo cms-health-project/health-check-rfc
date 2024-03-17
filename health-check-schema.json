@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cms-healthcheck.org/health-check-schema.json",
+  "title": "CMS HealthCheck",
+  "description": "CMS HealthCheck communication schema definition.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["pass", "fail", "warn"]
+    },
+    "version": {
+      "type": "string",
+      "description": "Version identifier",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "serviceId": {
+      "type": "string",
+      "description": "Service identifier",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "description": "HealthCheck description",
+      "minLength": 0,
+      "maxLength": 2000
+    },
+    "checks": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9.:]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "componentId": {
+                "type": "string"
+              },
+              "componentType": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["pass", "fail", "warn", "info"]
+              },
+              "time": {
+                "type": "string",
+                "format" : "date-time"
+              },
+              "observedValue": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "observedUnit": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "output": {
+                "type": "string",
+                "maxLength": 200
+              }
+            },
+            "required": [
+              "componentId",
+              "componentType",
+              "status"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "status",
+    "version",
+    "serviceId",
+    "description"
+  ]
+}
