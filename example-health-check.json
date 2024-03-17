@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "version": "1",
+  "serviceId": "example.org",
+  "description": "Health of WordPress website example.org",
+  "checks": {
+    "WordPress:Version": [
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "6.4.3",
+        "status": "info",
+        "time": "2018-01-17T03:36:48Z",
+        "output": ""
+      }
+    ],
+    "WordPress:DirectorySize": [
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "25",
+        "observedUnit": "GB",
+        "status": "warn",
+        "time": "2018-01-17T03:36:48Z",
+        "output": "Directory size of installation exceeds defined threshold"
+      }
+    ],
+    "WordPress:FailedLogins": [
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "20",
+        "status": "warn",
+        "time": "2018-01-17T03:36:48Z",
+        "output": "Number of failed login attempts in the last 24 hours exceeded defined threshold"
+      }
+    ],
+    "WordPress:OutdatedPlugins": [
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "5",
+        "status": "fail",
+        "time": "2018-01-17T03:36:48Z",
+        "output": "Some plugins are outdated and need to be updated"
+      }
+    ],
+    "WordPress:UserMfaActivated": [
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "username1",
+        "status": "pass",
+        "time": "2018-01-17T03:36:48Z",
+        "output": ""
+      },
+      {
+        "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
+        "componentType": "system",
+        "observedValue": "username2",
+        "status": "warn",
+        "time": "2018-01-17T03:36:48Z",
+        "output": "User username2 has not activated MFA"
+      }
+    ],
+    "WordPress:LastUserLoginTime": [
+      {
+        "componentId": "identifier7",
+        "componentType": "system",
+        "observedValue": "2018-01-17T03:36:48Z",
+        "observedUnit": "time",
+        "status": "info",
+        "time": "2018-01-17T03:36:48Z",
+        "output": ""
+      }
+    ],
+    "Yoast:Check1": [
+      {
+        "componentId": "identifier6",
+        "componentType": "component",
+        "status": "pass",
+        "time": "2018-01-17T03:36:48Z",
+        "output": ""
+      }
+    ],
+    "SecurityPlugin:FilePermissions": [
+      {
+        "componentId": "identifier6",
+        "componentType": "component",
+        "status": "fail",
+        "time": "2018-01-17T03:36:48Z",
+        "output": "File permissions are not correctly set"
+      }
+    ]
+  }
+}

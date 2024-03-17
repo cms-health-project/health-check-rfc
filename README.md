@@ -14,6 +14,13 @@ To use this definition require it to your project:
 conmposer require "cms-health-project/health-check-rfc":"^0.0.1"
 ```
 
+## JSON Schema Definition
+
+A  [JSON Schema Definition [health-check-schema.json]](./health-check-schema.json) is provided, which can be used
+to validate a json value against that schema, for example using [https://www.jsonschemavalidator.net/](https://www.jsonschemavalidator.net/).
+
+You can find a demo to validate the example json against this definition here: https://www.jsonschemavalidator.net/s/HK5eMqkh
+
 ## Contribution
 
 This package contains for now only a cgl check based on `php-cs-fixer`.
