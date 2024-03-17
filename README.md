@@ -11,7 +11,7 @@ not provide a concrete implementation.
 To use this definition require it to your project:
 
 ```terminal
-conmposer require "cms-health-project/health-check-rfc":"^0.0.1"
+composer require "cms-health-project/health-check-rfc"
 ```
 
 ## JSON Schema Definition

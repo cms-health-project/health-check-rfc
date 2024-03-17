@@ -3,7 +3,7 @@ Changelog
 
 # 0.x
 
-* 0.0.x
+* 0.0.2
   * Using an enum for the `component type` property of the `Check Result`
     entity showed as not suitable, as these value needs to be free to
     choose. Therefore, the enum class is removed and the interface return
