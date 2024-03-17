@@ -184,6 +184,20 @@ You can find a demo to validate the example json against this definition here: h
 
 For security reasons of the provided informations the implemented CMS healh check API should only reply to a HTTPS POST request and only if the request brings a security token. The security token should be at least 16 characters of three groups (uppercase, lowercase, digits). The implementation in the CMS should provide a function to revoke the security token.
 
+## CMS Integration
+
+To handle CMS integration, different client plugins / extensions / modules could be used. These define the endpoints needed for the communication to the monitoring server and deliver the application-based check results based on the checks that are implemented in the client component or CMS.
+
+### WordPress
+
+For WordPress, a "Site Health Check" already exists as a core component. The implementation of the client plugin aims to adopt that and gives the possibility to deliver all results of the WordPress Site Health Check also via the CMS Health Check API. New checks can directly be registered as WordPress Site Health Checks and can than automatically be used in the CMS Health Check API.
+
+For more information about the WordPress Site Health Check see https://wordpress.org/documentation/article/site-health-screen/.
+
+### TYPO3
+
+TYPO3 is using the reactions API (availbale since TYPO3 v12) to generate the health check responses. By creating a corresponding reaction in the TYPO3 backend, administrators are free in choosing which individual checks should be executed and included in the health check response. Additionally, due to the use of the reactions API is the security token already generated automatically and can be changed or revoked via the corresponding reaction record.
+
 ## Contribution
 
 This package contains for now only a cgl check based on `php-cs-fixer`.
