@@ -1,0 +1,60 @@
+---
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  php-lint:
+    name: "PHP Lint"
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: Display branch name
+        run: |
+          echo "Current branch: ${{ steps.extract_branch.outputs.branch }}"
+      - name: "Checkout"
+        uses: actions/checkout@v4
+      - name: "Lint php"
+        run: |
+          find . -name \\*.php ! -path "./vendor/\\*" -print0 | xargs -0 -n1 -P4 php -dxdebug.mode=off -l >/dev/null
+
+  code-quality:
+    name: "Code Quality"
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.1"
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: Display branch name
+        run: |
+          echo "Current branch: ${{ steps.extract_branch.outputs.branch }}"
+      - name: "Checkout"
+        uses: actions/checkout@v4
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
+      - name: "Install all dependencies"
+        run: |
+          composer install
+      - name: "Execute cgl check"
+        run: |
+          vendor/bin/php-cs-fixer check --verbose --show-progress=dots --diff

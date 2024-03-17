@@ -1,0 +1,21 @@
+{
+  "name": "cms-health-project/health-check-rfc",
+  "description": "CMS Health Check RFC",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "CmsHealth\\Definition\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.51"
+  },
+  "scripts": {
+    "cgl:check": "@php vendor/bin/php-cs-fixer check --verbose --show-progress=dots --diff",
+    "cgl:fix": "@php vendor/bin/php-cs-fixer fix --verbose --show-progress=dots"
+  }
+}
