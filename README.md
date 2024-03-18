@@ -198,6 +198,8 @@ For more information about the WordPress Site Health Check see https://wordpress
 
 TYPO3 is using the [reactions API](https://docs.typo3.org/c/typo3/cms-reactions/main/en-us/Index.html) (availbale since TYPO3 v12) to generate the health check responses. By creating a corresponding reaction in the TYPO3 backend, administrators are free in choosing which individual checks should be executed and included in the health check response. Additionally, due to the use of the reactions API is the security token already generated automatically and can be changed or revoked via the corresponding reaction record.
 
+A first implementation can be found in the public [health-checks](https://github.com/o-ba/health-checks) extension. 
+
 ## Contribution
 
 This package contains for now only a cgl check based on `php-cs-fixer`.
