@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This package provides a collection if interfaces and enums defining the
+This package provides a collection of interfaces and enums defining the
 required information required to build the final json structure. It does
 not provide a concrete implementation.
 
@@ -186,7 +186,7 @@ For security reasons of the provided informations the implemented CMS healh chec
 
 ## CMS Integration
 
-To handle CMS integration, different client plugins / extensions / modules could be used. These define the endpoints needed for the communication to the monitoring server and deliver the application-based check results based on the checks that are implemented in the client component or CMS.
+To handle CMS integrations, different client plugins / extensions / modules could be used. These define the endpoints needed for the communication to the monitoring server and deliver the application-based check results based on the checks that are implemented in the client component or CMS.
 
 ### WordPress
 
