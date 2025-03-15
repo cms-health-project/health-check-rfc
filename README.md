@@ -182,7 +182,7 @@ You can find a demo to validate the example json against this definition here: h
 
 ## Security
 
-For security reasons of the provided informations the implemented CMS healh check API should only reply to a HTTPS POST request and only if the request brings a security token. The security token should be at least 16 characters of three groups (uppercase, lowercase, digits). The implementation in the CMS should provide a function to revoke the security token.
+For security reasons of the provided informations any implementation which is sending out data should only reply to a HTTPS request and only if the request brings a security token. The security token should be at least 16 characters long and contain at least one character of these groups: uppercase, lowercase, digits. The implementation in the CMS should provide a function to revoke the security token.
 
 ## CMS Integration
 
