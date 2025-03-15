@@ -26,7 +26,10 @@ Based on this idea, a first Proof of Concept was created at CloudFest Hackathon 
 
 ## Format
 
-The interface is based on HTTP communication with responses in JSON format. The format is based on the IETF draft "Health Check Response Format for HTTP APIs" (https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check-06). Please see the following example and explanation:
+The interface is based on HTTP communication with responses in JSON format. However, the standard for the response does
+not require the request to be HTTP-based. It can also be a CLI command or similar. The format is based on the IETF draft
+"Health Check Response Format for HTTP APIs" (https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check-06).
+Please see the following example and explanation for the response:
 
 ```json
 {
@@ -180,23 +183,53 @@ to validate a json value against that schema, for example using [https://www.jso
 
 You can find a demo to validate the example json against this definition here: https://www.jsonschemavalidator.net/s/HK5eMqkh
 
+## Requesting Health data
+
+Requesting health check data is done via HTTP to a predefined endpoint. By default, this endpoint—the CMS
+implementation—must return a report containing all health checks. However, specific checks can be requested using
+the `names` GET parameter to limit the response to a selected set of checks.
+
+Implementations should also respect this parameter when processing requests made through alternative methods, such
+as CLI commands executed on the same server.
+
 ## Security
 
-For security reasons of the provided informations any implementation which is sending out data should only reply to a HTTPS request and only if the request brings a security token. The security token should be at least 16 characters long and contain at least one character of these groups: uppercase, lowercase, digits. The implementation in the CMS should provide a function to revoke the security token.
+For security reasons, any implementation receiving an HTTP request should only respond if the request is made over HTTPS
+and includes a valid security token. The token must be at least 16 characters long and contain at least one uppercase
+letter, one lowercase letter, and one digit.
+
+The security token must be sent via the Authorization header as a JWT bearer token. The CMS implementation should
+provide functions to generate and revoke security tokens as needed.
+
+Example HTTP request:
+
+```
+GET https://example.com/health-checks?names[]=WordPress:LastUserLoginTime
+Authorization: Bearer eyJjbGllbnRfaWQiOiJZekV6TUdkb01ISm5PSEJpT0cxaWJEaHlOVEE9IiwicmVzcG9uc2Vf
+Content-Type: application/json
+```
 
 ## CMS Integration
 
-To handle CMS integrations, different client plugins / extensions / modules could be used. These define the endpoints needed for the communication to the monitoring server and deliver the application-based check results based on the checks that are implemented in the client component or CMS.
+To handle CMS integrations, different client plugins / extensions / modules could be used. These define the endpoints
+needed for the communication to the monitoring server and deliver the application-based check results based on the
+checks that are implemented in the client component or CMS - might be filtered by the `names` argument.
 
 ### WordPress
 
-For WordPress, a "Site Health Check" already exists as a core component. The implementation of the client plugin aims to adopt that and gives the possibility to deliver all results of the WordPress Site Health Check also via the CMS Health Check API. New checks can directly be registered as WordPress Site Health Checks and can than automatically be used in the CMS Health Check API.
+For WordPress, a "Site Health Check" already exists as a core component. The implementation of the client plugin aims
+to adopt that and gives the possibility to deliver all results of the WordPress Site Health Check also via the CMS
+Health Check API. New checks can directly be registered as WordPress Site Health Checks and can than automatically be
+used in the CMS Health Check API.
 
 For more information about the WordPress Site Health Check see https://wordpress.org/documentation/article/site-health-screen/.
 
 ### TYPO3
 
-TYPO3 is using the [reactions API](https://docs.typo3.org/c/typo3/cms-reactions/main/en-us/Index.html) (availbale since TYPO3 v12) to generate the health check responses. By creating a corresponding reaction in the TYPO3 backend, administrators are free in choosing which individual checks should be executed and included in the health check response. Additionally, due to the use of the reactions API is the security token already generated automatically and can be changed or revoked via the corresponding reaction record.
+TYPO3 is using the [reactions API](https://docs.typo3.org/c/typo3/cms-reactions/main/en-us/Index.html) (availbale since TYPO3 v12) to generate the health check responses. By
+creating a corresponding reaction in the TYPO3 backend, administrators are free in choosing which individual checks
+should be executed and included in the health check response. Additionally, due to the use of the reactions API is
+the security token already generated automatically and can be changed or revoked via the corresponding reaction record.
 
 A first implementation can be found in the public [health-checks](https://github.com/o-ba/health-checks) extension. 
 
