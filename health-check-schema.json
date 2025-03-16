@@ -27,6 +27,10 @@
       "minLength": 0,
       "maxLength": 2000
     },
+    "time": {
+      "type": "string",
+      "format" : "date-time"
+    },
     "checks": {
       "type": "object",
       "patternProperties": {

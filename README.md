@@ -37,6 +37,7 @@ Please see the following example and explanation for the response:
   "version": "1",
   "serviceId": "example.org",
   "description": "Health of WordPress website example.org",
+  "time": "2018-01-17T03:36:52Z",
   "checks": {
     "WordPress:Version": [
       {
@@ -144,13 +145,17 @@ The status should be set to:
 *(optional)* public version of the health check API.
 
 #### serviceId
-*(optional)* a unique identifier of the service, in this case the URL of the website responsing.
+*(optional)* a unique identifier of the service, in this case the URL of the website responding.
 
 #### description
 *(optional)* a human-friendly description of the service.
 
+##### time
+*(optional)* is the date-time, in ISO8601 format, at which the result has been generated.
+
 #### checks
-*(required)* The checks object containing all single check data. "checks" contains one or more check results as an array.
+*(required)* contains one or more checks as an array. Each check is defined by a `name` and can contain
+one or more check results.
 
 ##### name
 *(required)* The name of the check. It is built as "componentName:checkName", where "componentName" is the name of a single component or category and "checkName" is the name of the check itself.

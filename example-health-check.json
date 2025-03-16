@@ -3,6 +3,7 @@
   "version": "1",
   "serviceId": "example.org",
   "description": "Health of WordPress website example.org",
+  "time": "2018-01-17T03:36:52Z",
   "checks": {
     "WordPress:Version": [
       {

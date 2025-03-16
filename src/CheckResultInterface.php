@@ -29,6 +29,5 @@ interface CheckResultInterface
     public function getObservedUnit(): string|null;
 
     public function getOutput(): string;
-
-    public function getTime(): \DateTime;
+    public function getTime(): \DateTimeInterface|null;
 }

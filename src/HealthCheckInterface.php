@@ -24,4 +24,5 @@ interface HealthCheckInterface
      * @return CheckInterface[]
      */
     public function getChecks(): array;
+    public function getTime(): \DateTimeInterface|null;
 }

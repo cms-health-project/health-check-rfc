@@ -16,7 +16,7 @@ namespace CmsHealth\Definition;
 
 interface CheckInterface
 {
-    public function getIdentifier(): string;
+    public function getName(): string;
 
     /**
      * @return CheckResultInterface[]
