@@ -3,6 +3,9 @@ Changelog
 
 # 0.x
 
+* 0.0.4
+  * Make optional properties nullable
+
 * 0.0.3
   * Added the time argument to the result.
   * Adjusted `HealthCheckInterface` to add the time argument to the result, defining it as nullable `\DateTimeInterface`.

@@ -17,12 +17,12 @@ namespace CmsHealth\Definition;
 interface HealthCheckInterface
 {
     public function getStatus(): HealthCheckStatus;
-    public function getVersion(): string;
-    public function getServiceId(): string;
-    public function getDescription(): string;
+    public function getVersion(): string|null;
+    public function getServiceId(): string|null;
+    public function getDescription(): string|null;
+    public function getTime(): \DateTimeInterface|null;
     /**
      * @return CheckInterface[]
      */
     public function getChecks(): array;
-    public function getTime(): \DateTimeInterface|null;
 }

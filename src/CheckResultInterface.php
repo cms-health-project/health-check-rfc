@@ -16,18 +16,17 @@ namespace CmsHealth\Definition;
 
 interface CheckResultInterface
 {
-    public function getComponentId(): string;
-
-    public function getComponentType(): string;
-
     public function getStatus(): CheckResultStatus;
-
-    public function getObservedValue(): string;
+    public function getComponentId(): string|null;
+    public function getComponentType(): string|null;
+    /**
+     * @return string|null Can return NULL for check only having a status or and maybe an output.
+     */
+    public function getObservedValue(): string|null;
     /**
      * @return string|null Returns NULL if not use-full for the observed value, otherwise the value unit.
      */
     public function getObservedUnit(): string|null;
-
-    public function getOutput(): string;
+    public function getOutput(): string|null;
     public function getTime(): \DateTimeInterface|null;
 }
