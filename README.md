@@ -234,9 +234,17 @@ the security token already generated automatically and can be changed or revoked
 
 A first implementation can be found in the public [health-checks](https://github.com/o-ba/health-checks) extension. 
 
+### Drupal CMS
+
+A first implementation of a Drupal module named "cms_health_check" can be found on [DO](https://www.drupal.org/project/cms_health_check) which
+ships a base set of Health Checks at a configurable end point. It is built in order to extend and implement
+more Health Checks.
+
+The source code is available on [drupalcode.org](https://git.drupalcode.org/project/cms_health_check).
+
 ## Contribution
 
-This package contains for now only a cgl check based on `php-cs-fixer`.
+This package contains for now only a CGL check based on `php-cs-fixer`.
 
 ```terminal
 composer install
