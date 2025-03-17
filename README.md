@@ -228,10 +228,9 @@ checks that are implemented in the client component or CMS - might be filtered b
 
 ### WordPress
 
-For WordPress, a "Site Health Check" already exists as a core component. The implementation of the client plugin aims
-to adopt that and gives the possibility to deliver all results of the WordPress Site Health Check also via the CMS
-Health Check API. New checks can directly be registered as WordPress Site Health Checks and can than automatically be
-used in the CMS Health Check API.
+For WordPress, a "Site Health Check" already exists as a core component. The [implementation](https://github.com/cms-health-project/wordpress-plugin)
+aims to adopt that and gives the possibility to deliver all results of the WordPress Site Health Check also via the CMS
+Health Check API.
 
 For more information about the WordPress Site Health Check see https://wordpress.org/documentation/article/site-health-screen/.
 
