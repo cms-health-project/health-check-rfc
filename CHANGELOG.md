@@ -3,6 +3,9 @@ Changelog
 
 # 0.x
 
+* 0.0.5
+  * Define "output" to be allowed for "pass" as well
+
 * 0.0.4
   * Make optional properties nullable
 

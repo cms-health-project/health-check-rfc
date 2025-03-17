@@ -11,8 +11,7 @@
         "componentType": "system",
         "observedValue": "6.4.3",
         "status": "info",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "WordPress:DirectorySize": [
@@ -52,8 +51,7 @@
         "componentType": "system",
         "observedValue": "username1",
         "status": "pass",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       },
       {
         "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
@@ -71,8 +69,7 @@
         "observedValue": "2018-01-17T03:36:48Z",
         "observedUnit": "time",
         "status": "info",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "Yoast:Check1": [
@@ -80,8 +77,7 @@
         "componentId": "identifier6",
         "componentType": "component",
         "status": "pass",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "SecurityPlugin:FilePermissions": [

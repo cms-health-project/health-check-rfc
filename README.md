@@ -45,8 +45,7 @@ Please see the following example and explanation for the response:
         "componentType": "system",
         "observedValue": "6.4.3",
         "status": "info",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "WordPress:DirectorySize": [
@@ -86,8 +85,7 @@ Please see the following example and explanation for the response:
         "componentType": "system",
         "observedValue": "username1",
         "status": "pass",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       },
       {
         "componentId": "dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d1",
@@ -105,8 +103,7 @@ Please see the following example and explanation for the response:
         "observedValue": "2018-01-17T03:36:48Z",
         "observedUnit": "time",
         "status": "info",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "Yoast:Check1": [
@@ -114,8 +111,7 @@ Please see the following example and explanation for the response:
         "componentId": "identifier6",
         "componentType": "component",
         "status": "pass",
-        "time": "2018-01-17T03:36:48Z",
-        "output": ""
+        "time": "2018-01-17T03:36:48Z"
       }
     ],
     "SecurityPlugin:FilePermissions": [
@@ -179,7 +175,7 @@ one or more check results.
 *(optional)* is the date-time, in ISO8601 format, at which the reading of the observedValue was recorded or the check itself happened.
 
 ##### output
-*(optional)* the raw error or warn message, possibly human-readable. Should be ommitted for status "pass". Can also contain additional information for the status "info".
+*(optional)* the raw error or warn message, possibly human-readable. Can also contain additional information for the status "pass" and "info".
 
 ## JSON Schema Definition
 
