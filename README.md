@@ -210,7 +210,17 @@ Authorization: Bearer eyJjbGllbnRfaWQiOiJZekV6TUdkb01ISm5PSEJpT0cxaWJEaHlOVEE9Ii
 Content-Type: application/json
 ```
 
-## CMS Integration
+## Implementations
+
+### Reference implementation
+
+The available [reference implementation](https://github.com/cms-health-project/serializable-reference-implementation) allows to get started with dedicated inetegrations easily.
+
+### PSR-15 implementation
+
+A general [PSR-15 based implementation](https://github.com/cms-health-project/psr15-implementation) is available to be used by any PHP project.
+
+## CMS Integrations
 
 To handle CMS integrations, different client plugins / extensions / modules could be used. These define the endpoints
 needed for the communication to the monitoring server and deliver the application-based check results based on the
