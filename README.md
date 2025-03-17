@@ -251,6 +251,9 @@ more Health Checks.
 
 The source code is available on [drupalcode.org](https://git.drupalcode.org/project/cms_health_check).
 
+### SULU
+
+To get started with Sulu, a basic [bundle](https://github.com/cms-health-project/health-sulu) is available, shipping a base set of Health Checks and a configurable end point.
 ## Contribution
 
 This package contains for now only a CGL check based on `php-cs-fixer`.
