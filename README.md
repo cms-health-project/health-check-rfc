@@ -251,7 +251,7 @@ more Health Checks.
 
 The source code is available on [drupalcode.org](https://git.drupalcode.org/project/cms_health_check).
 
-### SULU
+### Sulu
 
 To get started with Sulu, a basic [bundle](https://github.com/cms-health-project/health-sulu) is available, shipping a base set of Health Checks and a configurable end point.
 ## Contribution
